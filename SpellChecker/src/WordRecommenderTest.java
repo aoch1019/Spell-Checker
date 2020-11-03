@@ -57,4 +57,17 @@ class WordRecommenderTest {
 		double comm2 = w1.inCommon("hello", "part");
 		assertEquals(comm2, 0.0);
 	}
+	
+	@Test
+	void testIsWord() {
+		WordRecommender w1 = new WordRecommender("partialDictionary.txt");
+		
+		boolean hello = w1.isWord("hello");
+		assertTrue(hello);
+		
+		boolean notAWord = w1.isWord("notaword");
+		assertFalse(notAWord);
+		
+		assertFalse(w1.isWord(""));
+	}
 }

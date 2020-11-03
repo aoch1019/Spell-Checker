@@ -47,19 +47,6 @@ public class WordRecommender {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		WordRecommender w1 = new WordRecommender("partialDictionary.txt");		
-//		
-//		ArrayList<String> list4 = w1.getWordSuggestions("aardva", 2, 0.7, 1);
-//		System.out.println(list4.get(0));
-
-		
-//		ArrayList<String> testing = w.getWordSuggestions("testere", 3, 0.5, 8);
-//		
-//		for(String currWord : testing) {
-//			System.out.println(currWord);
-//		}
-		
-//		System.out.println(w.prettyPrint(testing));
 		
 	}
 

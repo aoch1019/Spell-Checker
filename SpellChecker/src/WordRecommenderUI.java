@@ -48,7 +48,7 @@ public class WordRecommenderUI {
 		System.out.println("What is the name of the file you want to spell check? ");
 		filename = scnr.nextLine();
 		String outputFile = filename + "_chk";
-		WordRecommender WR = new WordRecommender();
+		WordRecommender wr = new WordRecommender("engDictionary.txt");
 		File spellCheckFile = new File(filename);
 		try {
 			Scanner reader = new Scanner(spellCheckFile);
@@ -56,12 +56,12 @@ public class WordRecommenderUI {
 			while(reader.hasNext()) {
 				String word = reader.next();
 				//word found in dictionary
-				if (WR.isWord(word)){
+				if (wr.isWord(word)){
 					fw.write(word + " ");
 			    //word not found in dictionary
 				} else {
 					//tolerance = 3, commonPercent = 0.75, number of suggestions = 5
-					ArrayList<String> wordSuggestions = WR.getWordSuggestions(word, 3, 0.75, 5);
+					ArrayList<String> wordSuggestions = wr.getWordSuggestions(word, 3, 0.75, 5);
 					//no suggestions available
 					if (wordSuggestions.size() == 0) {
 						System.out.println("The word '" + word + "' is mispelled.");
@@ -81,7 +81,7 @@ public class WordRecommenderUI {
 					//suggestions available
 					} else {
 						System.out.println("The word '" + word + "' is mispelled. The following suggestions are available: ");
-						System.out.println(WR.prettyPrint(wordSuggestions));
+						System.out.println(wr.prettyPrint(wordSuggestions));
 						System.out.println("Press ‘r’ for replace, ‘a’ for accept as is, ‘t’ for type in manually.");
 						String input;
 						do {

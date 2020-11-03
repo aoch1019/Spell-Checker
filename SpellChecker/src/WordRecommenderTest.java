@@ -60,7 +60,7 @@ class WordRecommenderTest {
 	
 	@Test
 	void testIsWord() {
-		WordRecommender w1 = new WordRecommender("partialDictionary.txt");
+		WordRecommender w1 = new WordRecommender("engDictionary.txt");
 		
 		boolean hello = w1.isWord("hello");
 		assertTrue(hello);

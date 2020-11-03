@@ -108,7 +108,7 @@ public class WordRecommender {
 	}
 	
 	public boolean isWord(String word) {
-		File f = new File("engDictionary.txt");
+		File f = new File(this.filename);
 		try {
 			Scanner fileScanner = new Scanner(f);
 			while (fileScanner.hasNextLine()) {

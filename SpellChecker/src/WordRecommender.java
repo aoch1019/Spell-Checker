@@ -129,6 +129,16 @@ public class WordRecommender {
 		return false;
 	}
 	
+	public String prettyPrint(ArrayList<String> list) {
+		String output = "";
+		int counter = 1;
+		for(String curr : list) {
+			output += counter + ". " + curr + "\n";
+			counter++;
+		}
+		return output;
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		

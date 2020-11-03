@@ -107,6 +107,28 @@ public class WordRecommender {
 		return (double) numerator / (double) denominator;
 	}
 	
+	public boolean isWord(String word) {
+		File f = new File("engDictionary.txt");
+		try {
+			Scanner fileScanner = new Scanner(f);
+			while (fileScanner.hasNextLine()) {
+				String currWord = fileScanner.nextLine();
+				if(word.equals(currWord)) {
+					return true;
+				}
+				if(word.compareToIgnoreCase(currWord) < 0) {
+					return false;
+				}
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			System.out.println("maybe file name is incorrect");
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		

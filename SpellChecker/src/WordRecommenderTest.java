@@ -80,5 +80,9 @@ class WordRecommenderTest {
 		test1.add("bigger");
 		String output = w1.prettyPrint(test1);
 		assertEquals(output, "1. biker\n2. tiger\n3. bigger\n");
+		
+		ArrayList<String> test2 = new ArrayList<String>();
+		String output2 = w1.prettyPrint(test2);
+		assertEquals(output2, "");
 	}
 }

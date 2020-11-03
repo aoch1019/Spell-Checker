@@ -70,4 +70,15 @@ class WordRecommenderTest {
 		
 		assertFalse(w1.isWord(""));
 	}
+	
+	@Test
+	void testPrettyPrint() {
+		WordRecommender w1 = new WordRecommender("partialDictionary.txt");
+		ArrayList<String> test1 = new ArrayList<String>();
+		test1.add("biker");
+		test1.add("tiger");
+		test1.add("bigger");
+		String output = w1.prettyPrint(test1);
+		assertEquals(output, "1. biker\n2. tiger\n3. bigger\n");
+	}
 }

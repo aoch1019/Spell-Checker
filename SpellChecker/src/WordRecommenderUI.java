@@ -40,6 +40,13 @@ public class WordRecommenderUI {
 	}
 	
 	/*
+	 * returns spell checked filename
+	 */
+	public String getOutputName(String name) {
+		return name.replaceAll(".txt", "_chk.txt");
+	}
+	
+	/*
 	 * controls user interface
 	 */
 	public void ui() {
@@ -47,7 +54,7 @@ public class WordRecommenderUI {
 		String filename;
 		System.out.println("What is the name of the file you want to spell check? ");
 		filename = scnr.nextLine();
-		String outputFile = filename + "_chk";
+		String outputFile = getOutputName(filename);
 		WordRecommender wr = new WordRecommender("engDictionary.txt");
 		File spellCheckFile = new File(filename);
 		try {
@@ -98,6 +105,7 @@ public class WordRecommenderUI {
 					}
 				}
 			}
+			System.out.println("Your file has been edited under: " + outputFile);
 			fw.close();
 			reader.close();
 			scnr.close();
@@ -107,4 +115,11 @@ public class WordRecommenderUI {
 			e1.printStackTrace();
 		}
 	}
+	
+	public static void main(String[] args) {
+		WordRecommenderUI test = new WordRecommenderUI();
+		test.ui();
+		
+	}
+	
 }
